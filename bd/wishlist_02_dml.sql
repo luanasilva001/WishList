@@ -1,5 +1,6 @@
 --DMl
 use Projeto_WishList
+go
 
 Insert Into Usuarios (Email, Senha)
 values		('adm@adm','123')

@@ -4,7 +4,6 @@
 Create database Projeto_WishList
 Go
 
-
 --usar o BD
 use Projeto_WishList
 Go
@@ -20,6 +19,6 @@ Go
 Create Table ListaDesejos (
  IdDesejo int primary key identity,
  IdUsuario int foreign key references Usuarios(IdUsuario),
- Descriçãodesejo varchar(250) Unique Not Null,
+ Descricaodesejo varchar(250) Unique Not Null,
 );
 Go
