@@ -4,24 +4,9 @@ class CadDesejos extends Component{
     constructor(props){
         super(props);
         this.state = {
-            listaDesejos : [],
             descricao : '',
-            idUsuario : 1
+            idUsuario : 0
         }
-    }
-
-    buscarDesejos = () => {
-        console.log('A API tá lascada!')
-
-        fetch('http://localhost:5000/api/listadesejo')
-
-        .then(resposta => resposta.json())
-
-        .then(dados => this.setState({ listaDesejos : dados }))
-    }
-
-    componentDidMount(){
-        this.buscarDesejos();
     }
 
     salvarDescricao = async (event) => {
@@ -80,12 +65,12 @@ class CadDesejos extends Component{
                                     onChange={this.salvarDescricao}
                                     placeholder="Digite seu desejo aqui..."
                                 />
-                                {/* <input
+                                <input
                                     type="number"
                                     value={this.state.idUsuario}
                                     onChange={this.salvarId}
                                     placeholder="Id do Usuário"
-                                /> */}
+                                />
                             </div>
                         </form>
                     </section>
