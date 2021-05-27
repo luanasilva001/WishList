@@ -23,7 +23,9 @@ namespace senai_wishlist_webApi
                                   builder =>
                                   {
                                       builder.WithOrigins("http://localhost:3000"
-                                                          );
+                                                          )
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
                                   });
             });
 

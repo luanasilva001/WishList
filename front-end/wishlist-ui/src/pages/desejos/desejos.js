@@ -24,12 +24,6 @@ class Desejos extends Component{
         this.buscarDesejos();
     }
 
-    cadastrarDesejo = (event) => {
-        event.preventDefault();
-
-        fetch('http://localhost:5000/api/')
-    }
-
     render(){
         return(
             <div>

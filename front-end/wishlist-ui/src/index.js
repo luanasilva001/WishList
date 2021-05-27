@@ -5,6 +5,7 @@ import App from './pages/home/App';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import desejos from './pages/desejos/desejos';
+import cadDesejos from './pages/cadDesejos/cadDesejos';
 import reportWebVitals from './reportWebVitals';
 
 const routing = (
@@ -13,7 +14,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={App} /> {/* Home */}
         <Route path="/listadesejos" component={desejos} /> {/* Desejos */}
-        {/* <Route path="/notFound" component={notFound} /> {/* Not Found */}
+        <Route path="/caddesejos" component={cadDesejos} /> {/* Cadastrar
         {/* <Redirect to="/notFound" component={notFound} /> Redireciona para Not Found */}
       </Switch>
     </div>

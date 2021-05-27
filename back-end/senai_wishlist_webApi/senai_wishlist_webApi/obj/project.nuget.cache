@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f6YcEuoAZSNLA2XIMaHEVt7UXdkmvsYW/3TWcEta00E6m2znE8a1djH7Ueg1yYCM8oQHli30mozrY+pa9hwdBQ==",
+  "dgSpecHash": "jJsgrOZV5Nd5cBXBiUGN4iE1e/hWa3HTdkOKqC3SZLxGZFAqgaj8C5umT3B507NG4btnKIGSiQ06IonYGBAS3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
+  "projectFilePath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Desktop\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Desktop\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

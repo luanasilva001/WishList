@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj": {}
+    "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj": {
+    "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
+        "projectUniqueName": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
         "projectName": "senai_wishlist_webApi",
-        "projectPath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
+        "projectPath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\senai_wishlist_webApi.csproj",
         "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\obj\\",
+        "outputPath": "C:\\Users\\Desktop\\Desktop\\Codação\\WishList\\WishList\\WishList\\back-end\\senai_wishlist_webApi\\senai_wishlist_webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",
