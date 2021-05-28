@@ -1,28 +1,29 @@
+import '../cadDesejos/cadDesejos.css';
 import { Component } from 'react';
 
-class CadDesejos extends Component{
-    constructor(props){
+class CadDesejos extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            descricao : '',
-            idUsuario : 0
+            descricao: '',
+            idUsuario: 0
         }
     }
 
     salvarDescricao = async (event) => {
-        await this.setState({ descricao : event.target.value })
+        await this.setState({ descricao: event.target.value })
         console.log(this.state.descricao)
     }
 
     salvarId = async (event) => {
-        await this.setState({ idUsuario : event.target.value })
+        await this.setState({ idUsuario: event.target.value })
         console.log(this.state.idUsuario)
     }
 
     limparCampos = () => {
         this.setState({
-            descricao : '',
-            idUsuario : 1
+            descricao: '',
+            idUsuario: 1
         })
 
         console.log("Valores limpos com sucesso!")
@@ -33,51 +34,63 @@ class CadDesejos extends Component{
         event.preventDefault();
 
         fetch('http://localhost:5000/api/listadesejo', {
-            method : 'POST',
+            method: 'POST',
 
-            body : JSON.stringify({ Descricaodesejo : this.state.descricao, IdUsuario : this.state.idUsuario }),
+            body: JSON.stringify({ Descricaodesejo: this.state.descricao, IdUsuario: this.state.idUsuario }),
 
-            headers : {
-                "Content-Type" : "application/json"
+            headers: {
+                "Content-Type": "application/json"
             }
         })
 
-        .then(console.log('Desejo cadastrado!'))
+            .then(console.log('Desejo cadastrado!'))
 
-        .catch(erro => console.log(erro))
+            .catch(erro => console.log(erro))
 
         // .then(this.limparCampos)
     }
 
-    render(){
-        return(
-            <div>
-                <main>
-                    <section>
-                        {/* Cadastro de Desejo */}
-                        <h2>Louvado seja Allah o Senhor do Universo</h2>
-                        <form onSubmit={this.cadastrarDesejo}>
-                            <div>
-                                <button type="submit">Enviar</button>
-                                <input
-                                    type="text"
-                                    value={this.state.descricao}
-                                    onChange={this.salvarDescricao}
-                                    placeholder="Digite seu desejo aqui..."
-                                />
-                                <input
-                                    type="number"
-                                    value={this.state.idUsuario}
-                                    onChange={this.salvarId}
-                                    placeholder="Id do Usuário"
-                                />
-                            </div>
+    render() {
+        return (
+            <html>
+                <head>
+                    <title>Cadastro de desejos</title>
+                    <meta charSet="utf-8" />
+                    <meta name="viewport" content="width=devide-width,initial-scale=1, shrink-to-fit=no" />
+                </head>
+                <body>
+
+                    <header>
+                        <div className="menu">
+                            <a href="#">Desejos.com</a>
+                        </div>
+                    </header>
+
+                    <section className="cadastro">
+                        <h2>Cadastrar desejo na lista</h2>
+                        <form className="formulario" onSubmit={this.cadastrarDesejo}>
+                            <p>Digite o seu desejo</p>
+                            <input className="input-nome"
+                                type="text"
+                                value={this.state.descricao}
+                                onChange={this.salvarDescricao}
+                                placeholder="Digite aqui o seu desejo"
+                            />
+                            <p>Digite o seu ID</p>
+                            <input className="input-id"
+                                type="number"
+                                value={this.state.idUsuario}
+                                onChange={this.salvarId}
+                                placeholder="digite seu id"
+                            />
+                            <button type="submit">Enviar</button>
                         </form>
                     </section>
-                </main>
-            </div>
+                </body >
+            </html >
+
         )
-      }
+    }
 }
 
 export default CadDesejos;

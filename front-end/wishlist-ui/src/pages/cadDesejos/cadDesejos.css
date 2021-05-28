@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, Arial, sans-serif;
+  color: #000000;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* menu */
+.menu {
+  background-image: url("./imgs/Rectangle\ 10.png");
+}
+
+.menu a {
+  color: #000000;
+  font-size: 2.175em;
+  line-height: 52.5px;
+  font-weight: 400;
+  margin: 0 10px;
+  margin: auto;
+  text-align: center;
+}
+
+/* cadastro */
+.cadastro {
+  border-top: 2px solid #db944d;
+  border-bottom: 2px solid #db944d;
+  margin: 0 auto;
+  max-width: 960px;
+  margin: 25px auto;
+  padding: 60px 0;
+  display: table;
+}
+
+.formulario {
+  flex: 1 1 175px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.formulario p {
+  color: #000000;
+  font-size: 1.5625em;
+  line-height: 52.5px;
+  font-weight: 400;
+}

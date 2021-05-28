@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './pages/home/App';
+import Home from './pages/home/home';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import desejos from './pages/desejos/desejos';
@@ -12,7 +12,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={App} /> {/* Home */}
+        <Route exact path="/" component={Home} /> {/* Home */}
         <Route path="/listadesejos" component={desejos} /> {/* Desejos */}
         <Route path="/caddesejos" component={cadDesejos} /> {/* Cadastrar
         {/* <Redirect to="/notFound" component={notFound} /> Redireciona para Not Found */}
