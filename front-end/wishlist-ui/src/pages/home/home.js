@@ -1,6 +1,8 @@
 import '../home/home.css';
-import img2 from "../home/imgs/retangulo02.png"
-// import cadDesejos from './pages/cadDesejos/cadDesejos';
+import desejos from '../desejos/desejos';
+import cadDesejos from '../cadDesejos/cadDesejos';
+import { Route, Switch, Link } from 'react-router-dom';
+import img2 from "../home/imgs/Pair programming-bro (1).png"
 
 function App() {
   return (
@@ -18,10 +20,15 @@ function App() {
             </div>
             <nav className="menu-nav">
               <ul>
-                <li><a href="#listar">Listar</a></li>
-                <li><a href="#cadastro">Cadastrar Desejos</a></li>
+                <li><Link to="/listadesejos">Listar</Link></li>
+                <li><Link to="/caddesejos">Cadastrar desejos</Link></li>
               </ul>
             </nav>
+
+            <Switch>
+              <Route path="/caddesejos" component={cadDesejos} />
+              <Route path="/listadesejos" component={desejos} />
+            </Switch>
           </div>
         </header>
         <section className="sobre">

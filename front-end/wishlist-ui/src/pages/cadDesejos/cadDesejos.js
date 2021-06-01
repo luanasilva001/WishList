@@ -1,4 +1,9 @@
 import '../cadDesejos/cadDesejos.css';
+import img from "../cadDesejos/imgs/image-removebg-preview.png"
+import img2 from "../cadDesejos/imgs/Creative thinking-bro (1).png"
+import { Route, Switch, Link } from 'react-router-dom';
+import Home from '../home/home';
+import desejos from '../desejos/desejos';
 import { Component } from 'react';
 
 class CadDesejos extends Component {
@@ -58,37 +63,57 @@ class CadDesejos extends Component {
                     <meta charSet="utf-8" />
                     <meta name="viewport" content="width=devide-width,initial-scale=1, shrink-to-fit=no" />
                 </head>
-                <body>
 
+                <body>
                     <header>
-                        <div className="menu">
-                            <a href="#">Desejos.com</a>
+                        <div className="menu-cad">
+                            <div className="menu-voltar">
+                                <div className="menu-imagem">
+                                    <img src={img} alt="Seta voltar" />
+                                </div>
+                                <Link className="menu-voltar-texto" to="/">Voltar</Link>
+                            </div>
+
+                            <div className="menu-listar">
+                                <Link to="/listadesejos">Listar meus desejos</Link>
+                            </div>
                         </div>
+
+                        <Switch>
+                            <Route exact path="/" component={Home} /> {/* Home */}
+                            <Route path="/listadesejos" component={desejos} /> {/* Desejos */}
+                        </Switch>
                     </header>
 
-                    <section className="cadastro">
-                        <h2>Cadastrar desejo na lista</h2>
-                        <form className="formulario" onSubmit={this.cadastrarDesejo}>
-                            <p>Digite o seu desejo</p>
-                            <input className="input-nome"
-                                type="text"
-                                value={this.state.descricao}
-                                onChange={this.salvarDescricao}
-                                placeholder="Digite aqui o seu desejo"
-                            />
-                            <p>Digite o seu ID</p>
-                            <input className="input-id"
-                                type="number"
-                                value={this.state.idUsuario}
-                                onChange={this.salvarId}
-                                placeholder="digite seu id"
-                            />
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </section>
-                </body >
-            </html >
+                    <div className="cadastro">
+                        <div className="cadastro-formulario">
+                            <p className="titulo-cadastro">Cadastro de desejos</p>
+                            <form className="formulario" onSubmit={this.cadastrarDesejo}>
+                                <input className="input-id"
+                                    type="number"
+                                    value={this.state.idUsuario}
+                                    onChange={this.salvarId}
+                                    placeholder="Digite o seu ID"
+                                />
+                                <input className="input-nome"
+                                    type="text"
+                                    value={this.state.descricao}
+                                    onChange={this.salvarDescricao}
+                                    placeholder="Escreva aqui o seu desejo"
+                                />
+                                <button className="botao" type="submit">Enviar</button>
+                            </form>
+                        </div>
 
+                        <div className="menu-imagem-lado">
+                            <img src={img2} alt="Personagem segurando lista na mão" />
+                        </div>
+                    </div>
+                    <footer className="footer">
+                        <p>SENAI INFORMÁTICA</p>
+                    </footer>
+                </body >
+            </html>
         )
     }
 }

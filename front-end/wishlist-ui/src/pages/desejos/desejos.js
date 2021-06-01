@@ -1,19 +1,20 @@
 import { Component } from 'react';
 import '../desejos/desejos.css';
-import img from "../home/imgs/retangulo01.png"
-import img2 from "../desejos/icon/communication/Path.png"
+import { Route, Switch, Link } from 'react-router-dom';
+import Home from '../home/home';
+import cadDesejos from '../cadDesejos/cadDesejos';
+import img from "../cadDesejos/imgs/image-removebg-preview.png"
+import img2 from "../desejos/imgs/Checklist-pana.png"
 
 class Desejos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listaDesejos: [],
-            descricao: '',
-            usuario: ''
+            listaDesejos: []
         }
     }
 
-    buscarDesejos = () => {
+    buscarDesejos = (event) => {
         console.log('A API tá lascada!')
 
         fetch('http://localhost:5000/api/listadesejo')
@@ -29,59 +30,146 @@ class Desejos extends Component {
 
     render() {
         return (
-            <div>
-                <nav className="barra-inicial">
-                    <h2 className="texto-site">Desejos.com</h2>
-                    <img className="imagem" src={img} style={{ height: "100px", width: "100%" }} />
-                </nav>
-                <main>
-                    <section>
-                        <h2>Lista de Desejos</h2>
-                        <img className="icone" src={img2} />
-                        <table>
-                            <thead>
-                                <tr>
-                                    {/* <th>#</th>
-                                    <th>IdUsuario</th>
-                                    <th>Descrição</th> */}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.state.listaDesejos.map((desejo) => {
-                                        return (
-                                            <tr key={desejo.idDesejo}>
-                                                <td>{desejo.idDesejo}</td>
-                                                <td>{desejo.idUsuario}</td>
-                                                <td>{desejo.descricaodesejo}</td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </table>
-                    </section>
-
-                    <section>
-                        {/* Cadastro de Desejo */}
-                        {/* <h2>Nome do usuário para buscar</h2> */}
-
-                        <form>
-                            <div>
-                                {/* <input
-                                     type="text"
-                                    value={this.state.usuario}
-                                    onChange={this.salvarNome}
-                                    placeholder="Nome do Usuário"
-                                /> */}
-                                <button type="submit" onClick={() => this.buscarDesejos()}>Visualizar</button>
+            <div className="div-mae">
+                <header>
+                    <div className="menu-cad">
+                        <div className="menu-voltar">
+                            <div className="menu-imagem">
+                                <img src={img} alt="Seta voltar" />
                             </div>
-                        </form>
-                    </section>
+
+                            <a className="menu-voltar-texto" href="/caddesejos">Voltar</a>
+                        </div>
+
+                        <div className="menu-listar">
+                            <Link to="/">HOME</Link>
+                        </div>
+                    </div>
+
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/caddesejos" component={cadDesejos} />
+                    </Switch>
+                </header>
+
+
+                <main>
+                    <h3 className="titulo">Lista de Desejos</h3>
+                    <div className="todos-desejos">
+                        <div className="desejos">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {/* <th>#</th>
+                                    <th>IdUsuario</th> */}
+                                        <th style={{ color: "#db944d", alignItems: "flex-end" }}>Descrição</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        this.state.listaDesejos.map((desejo) => {
+                                            return (
+                                                <tr key={desejo.idDesejo}>
+                                                    {/* <td>{desejo.idDesejo}</td>
+                                                <td>{desejo.idUsuario}</td> */}
+                                                    <td>{desejo.descricaodesejo}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="desejos-img">
+                            <img src={img2} alt="Personagem segurando uma lista" />
+                        </div>
+                    </div>
                 </main>
-            </div >
+                <footer className="footer">
+                    <p>SENAI INFORMÁTICA</p>
+                </footer>
+            </div>
         )
     }
+
+    // render() {
+    //     return (
+    //         // <head>
+    //         //     <title>Listar desejos</title>
+    //         //     <meta charSet="utf-8" />
+    //         //     <meta name="viewport" content="width=devide-width,initial-scale=1, shrink-to-fit=no" />
+    //         // </head>
+
+    //         <div className="tudo">
+    //             <header>
+    //                 <div className="menu-cad">
+    //                     <div className="menu-voltar">
+    //                         <div className="menu-imagem">
+    //                             <img src={img} alt="Seta voltar" />
+    //                         </div>
+
+    //                         <a className="menu-voltar-texto" href="/caddesejos">Voltar</a>
+    //                     </div>
+
+    //                     <div className="menu-listar">
+    //                         <Link to="/">HOME</Link>
+    //                     </div>
+    //                 </div>
+
+    //                 <Switch>
+    //                     <Route exact path="/" component={Home} />
+    //                     <Route path="/caddesejos" component={cadDesejos} />
+    //                 </Switch>
+    //             </header>
+    //             <main>
+
+    //                 {/* listar desejos */}
+    //                 <h2>Lista de desejos</h2>
+    //                 <div className="todos-desejos">
+    //                     <div className="desejos">
+    //                         {
+    //                             this.state.listaDesejos.map((desejo) => {
+    //                                 return (
+    //                                     <table>
+    //                                         <thead>
+    //                                             <tr>
+    //                                                 <th>#</th>
+    //                                                 <th>IdUsuario</th>
+    //                                                 <th>Descrição</th>
+    //                                             </tr>
+    //                                         </thead>
+    //                                         <tbody>
+    //                                             {
+    //                                                 this.state.listaDesejos.map((desejo) => {
+    //                                                     return (
+    //                                                         <tr key={desejo.idDesejo}>
+    //                                                             <td>{desejo.idDesejo}</td>
+    //                                                             <td>{desejo.idUsuario}</td>
+    //                                                             <td>{desejo.descricaodesejo}</td>
+    //                                                         </tr>
+    //                                                     )
+    //                                                 })
+    //                                             }
+    //                                         </tbody>
+    //                                     </table>
+
+    //                                 )
+    //                             })
+    //                         }
+    //                         <form>
+    //                             <div>
+    //                                 <button type="submit" onClick={() => this.buscarDesejos()}>Enviar</button>
+    //                             </div>
+    //                         </form>
+    //                     </div>
+    //                     <div className="desejos-img">
+    //                         <img src={img2} alt="Personagem segurando uma lista" />
+    //                     </div>
+    //                 </div>
+    //             </main>
+    //         </div>
+    //     )
+    // }
 }
 
 export default Desejos;
